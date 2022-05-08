@@ -1,0 +1,44 @@
+﻿
+{% extends "base.html" %}
+
+{% block content %}
+</br>
+   <p align="justify">Единица измерения: мкг/м³
+	Массовая, или гравиметрическая концентрация – это масса частиц, содержащихся 
+	в единице объёма воздуха. В международной практике чаще всего используется 
+	единица массовой концентрации мг/м3. При очень низких концентрациях может 
+	использоваться также мкг/м3 (мкг/м3, 10-3 мг/м3) и нанограмм на кубический 
+	метр (нг/м3).
+	Для оценки экологического воздействия на окружающую среду тех или иных 
+	источников выбросов содержание атмосферной пыли и аэрозолей также определяют 
+	по выпадению на подстилающую поверхность и измеряют в единицах массы на 
+	единицу площади. Индекс:</br>
+	⩾ 58.80 - Вредно</p>
+	⩾ 37.90 - Вредно для уязвимых групп</p>
+	⩾ 13.00 - Средне</br>
+	⩾ 3.50 - Хорошо</p>
+<form class="form-inline" method="POST">
+    <input type="text" name="country"/>
+    <pre><p> </p></pre>
+    <button type="submit" class="btn btn-success">Найти</button>
+</form>
+<form class="w-50">
+<div readonly class="form-group mb-2">
+    <textarea readonly class="form-control" id="exampleFormControlTextarea1" 
+	rows="1">{{answer}}</textarea>
+</div>
+</form>
+<p><b>По убыванию</b></p>
+<table border="1">
+{% for country in table%}
+   <tr>
+	{% for elem in country %}
+	<td>
+	    <pre>{{ elem }}</pre>
+	</td>
+	{% endfor %}
+   </tr>
+{% endfor %}
+</table>
+</br>
+{% endblock %}
